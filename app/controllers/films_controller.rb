@@ -1,4 +1,7 @@
 class FilmsController < ApplicationController
+  
+  before_filter :authenticate_admin!, :except => [:index, :show]
+  
   def index
     @films = Film.all
   end

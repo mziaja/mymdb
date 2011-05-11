@@ -8,6 +8,10 @@
     <%= yield(:head) %>
   </head>
   <body>
+	<div id ="authentication">
+		<%= render :partial => 'authentication/sign_in' unless user_signed_in? || admin_signed_in? %>
+		<%= render :partial => 'authentication/sign_out' if user_signed_in? || admin_signed_in? %>
+	</div>
     <div id="container">
 	  <h1>Sly Films</h1>
 		<div>
