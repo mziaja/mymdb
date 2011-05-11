@@ -9,6 +9,21 @@
   </head>
   <body>
     <div id="container">
+	  <h1>Sly Films</h1>
+		<div>
+			<div id = "navigation">
+				<%= link_to 'Home', root_path %>
+				<%= link_to 'Films', films_path %>
+				<%= link_to 'Genres', genres_path %>
+			</div>
+      		<div id="search">
+				<% form_tag search_index_path do %>
+				<%= text_field_tag :search_for %>
+				<%= submit_tag 'Go' %>
+				<% end %>
+	  		</div>
+			<div style="clear:both;"></div>
+		</div>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>

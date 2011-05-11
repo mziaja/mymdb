@@ -1,0 +1,3 @@
+<% @films.each do |film| %>
+	<p><%= link_to film.name, film_path(film) %></p>
+<% end %>

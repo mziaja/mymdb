@@ -1,0 +1,17 @@
+<% title "Genres" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for genre in @genres %>
+    <tr>
+      <td><%= genre.name %></td>
+      <td><%= link_to "Show", genre %></td>
+      <td><%= link_to "Edit", edit_genre_path(genre) %></td>
+      <td><%= link_to "Destroy", genre, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Genre", new_genre_path %></p>
